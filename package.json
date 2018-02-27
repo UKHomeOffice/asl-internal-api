@@ -19,7 +19,8 @@
   "homepage": "https://github.com/UKHomeOffice/asl-inspector-api#readme",
   "dependencies": {
     "@asl/schema": "^1.5.1",
-    "@asl/service": "^1.1.2"
+    "@asl/service": "^1.1.2",
+    "express": "^4.16.2"
   },
   "devDependencies": {
     "eslint": "^4.18.1",
