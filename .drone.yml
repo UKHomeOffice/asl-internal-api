@@ -12,10 +12,12 @@ pipeline:
 
   build:
     image: docker:17.09.1
+    secrets:
+      - npm_auth_token
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     commands:
-      - docker build -t asl .
+      - docker build --build-arg NPM_AUTH_USERNAME=$${NPM_AUTH_USERNAME} --build-arg NPM_AUTH_TOKEN=$${NPM_AUTH_TOKEN} -t asl .
     when:
       branch: master
       event: [push, tag]
