@@ -1,16 +1,9 @@
 pipeline:
 
-  npm_auth:
+  test:
     image: node:8
     secrets:
       - npm_auth_token
-    commands:
-      - echo "_authToken=$${NPM_AUTH_TOKEN}" >> .npmrc
-    when:
-      event: [push, pull_request, tag]
-
-  test:
-    image: node:8
     commands:
       - npm install
       - npm test
@@ -68,6 +61,8 @@ pipeline:
 
   configure_deploy:
     image: node:8
+    secrets:
+      - npm_auth_token
     commands:
       - mkdir deploy
       - npx kube-cookbook --out deploy
@@ -88,3 +83,7 @@ pipeline:
     when:
       environment: dev
       event: deployment
+
+matrix:
+  NPM_AUTH_USERNAME:
+    - asl
