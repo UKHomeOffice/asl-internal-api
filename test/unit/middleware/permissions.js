@@ -1,9 +1,9 @@
 const assert = require('assert');
 const reqres = require('reqres');
 
-const permissions = require('../../../lib/middleware/permissions');
+const hasRole = require('../../../lib/middleware/has-role');
 
-describe('Permissions middleware', () => {
+describe('Has role middleware', () => {
 
   let req;
   let res;
@@ -21,7 +21,7 @@ describe('Permissions middleware', () => {
   });
 
   it('will reject requests if the user does not hold the required role', done => {
-    const middleware = permissions('admin');
+    const middleware = hasRole('admin');
     middleware(req, res, err => {
       try {
         assert(err);
@@ -35,7 +35,7 @@ describe('Permissions middleware', () => {
 
   it('will allow requests if the user has the role defined', done => {
     req.user.profile.asruAdmin = true;
-    const middleware = permissions('admin');
+    const middleware = hasRole('admin');
     middleware(req, res, err => {
       try {
         assert(!err);
@@ -48,7 +48,7 @@ describe('Permissions middleware', () => {
 
   it('supports multiple roles', done => {
     req.user.profile.asruAdmin = true;
-    const middleware = permissions('licensing', 'admin');
+    const middleware = hasRole('licensing', 'admin');
     middleware(req, res, err => {
       try {
         assert(!err);
