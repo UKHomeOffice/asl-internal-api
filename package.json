@@ -35,7 +35,7 @@
   "devDependencies": {
     "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
-    "eslint-config-lennym": "^1.4.0",
+    "eslint-config-lennym": "^2.1.1",
     "mocha": "^7.1.0",
     "nodemon": "^1.18.9",
     "reqres": "^2.1.0"
