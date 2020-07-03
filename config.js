@@ -2,6 +2,7 @@ module.exports = {
   port: process.env.PORT || 8080,
   api: process.env.API_URL,
   workflow: process.env.WORKFLOW_SERVICE,
+  search: process.env.SEARCH_SERVICE,
   auth: {
     realm: process.env.KEYCLOAK_REALM,
     url: process.env.KEYCLOAK_URL,
