@@ -24,7 +24,7 @@
   "dependencies": {
     "@asl/constants": "^0.8.2",
     "@asl/schema": "^8.2.1",
-    "@asl/service": "^8.0.0",
+    "@asl/service": "^8.2.0",
     "express": "^4.16.2",
     "http-proxy": "^1.18.1",
     "into-stream": "^4.0.0",
