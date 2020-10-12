@@ -16,5 +16,6 @@ module.exports = {
     password: process.env.DATABASE_PASSWORD,
     port: process.env.DATABASE_PORT,
     username: process.env.DATABASE_USERNAME
-  }
+  },
+  bodySizeLimit: process.env.BODY_SIZE_LIMIT
 };
