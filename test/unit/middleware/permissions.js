@@ -15,7 +15,8 @@ describe('Has role middleware', () => {
         asruAdmin: false,
         asruLicensing: false,
         asruInspector: false,
-        asruSupport: false
+        asruSupport: false,
+        asruRops: false
       }
     };
     res = {};
