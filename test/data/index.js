@@ -3,7 +3,25 @@ const ids = require('./ids');
 module.exports = models => {
 
   return Promise.resolve()
-    .then(() => models.Profile.query().insert([
+    .then(() => models.Establishment.query().insert([
+      {
+        id: ids.establishments.croydon,
+        issueDate: '2018-01-01T12:00:00Z',
+        name: 'University of Croydon',
+        country: 'england',
+        address: '100 High Street',
+        email: 'test@example.com'
+      },
+      {
+        id: ids.establishments.marvell,
+        issueDate: '2020-07-01T12:00:00Z',
+        name: 'Marvell Pharmaceuticals',
+        country: 'england',
+        address: '101 High Street',
+        email: 'test@example.com'
+      }
+    ]))
+    .then(() => models.Profile.query().insertGraph([
       {
         id: ids.profiles.licensing,
         userId: 'licensing',
@@ -30,7 +48,17 @@ module.exports = models => {
         email: 'rops@example.com',
         asruUser: true,
         asruRops: true
+      },
+      {
+        id: ids.profiles.bruceBanner,
+        userId: 'bruceybaby',
+        firstName: 'Bruce',
+        lastName: 'Banner',
+        email: 'bb@example.com',
+        asruUser: false,
+        roles: [ { establishmentId: ids.establishments.croydon, type: 'holc' } ],
+        establishments: [ { id: ids.establishments.croydon, role: 'admin' } ]
       }
-    ]));
+    ], { relate: true }));
 
 };
