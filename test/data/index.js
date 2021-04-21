@@ -8,17 +8,18 @@ module.exports = models => {
         id: ids.establishments.croydon,
         issueDate: '2018-01-01T12:00:00Z',
         name: 'University of Croydon',
-        country: 'england',
-        address: '100 High Street',
-        email: 'test@example.com'
+        status: 'active'
       },
       {
         id: ids.establishments.marvell,
         issueDate: '2020-07-01T12:00:00Z',
         name: 'Marvell Pharmaceuticals',
-        country: 'england',
-        address: '101 High Street',
-        email: 'test@example.com'
+        status: 'active'
+      },
+      {
+        id: ids.establishments.inactive,
+        name: 'Inactive establishment',
+        status: 'inactive'
       }
     ]))
     .then(() => models.Profile.query().insertGraph([
