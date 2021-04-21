@@ -113,6 +113,25 @@ describe('/rops', () => {
           assert.deepStrictEqual(ropsSummary.overdue, 2, 'there should be 2 rops overdue');
         });
     });
+
+    it('returns the correct summary counts for ROPS by establishment', () => {
+      return request(this.api)
+        .get(`/rops/2020/establishments`)
+        .expect(200)
+        .expect(response => {
+          const { data, meta } = response.body;
+          const croydonSummary = data.find(e => e.id === 100);
+          assert.deepStrictEqual(croydonSummary.ropsDue, 3, 'there should be 3 rops due');
+          assert.deepStrictEqual(croydonSummary.ropsSubmitted, 1, 'there should be 1 rop submitted');
+          assert.deepStrictEqual(croydonSummary.ropsOutstanding, 2, 'there should be 2 rops outstanding');
+
+          const marvellSummary = data.find(e => e.id === 101);
+          assert.deepStrictEqual(marvellSummary.ropsDue, 0, 'there should be 0 rops due');
+
+          assert.ok(!data.find(e => e.id === 999), 'inactive establishments should not be returned in the data');
+          assert.deepStrictEqual(meta.total, 2, 'inactive establishments should not be counted in total');
+        });
+    });
   });
 
 });
