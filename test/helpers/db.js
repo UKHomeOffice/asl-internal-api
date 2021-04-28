@@ -28,6 +28,7 @@ module.exports = settings => {
         'Exemption',
         'Certificate',
         'Export',
+        'Notification',
         'Profile',
         'Invitation',
         'Establishment'
