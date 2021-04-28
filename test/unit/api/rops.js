@@ -128,6 +128,9 @@ describe('/rops', () => {
 
           const marvellSummary = data.find(e => e.id === 101);
           assert.deepStrictEqual(marvellSummary.ropsDue, 0, 'there should be 0 rops due');
+          assert.deepStrictEqual(marvellSummary.ropsSubmitted, 0, 'there should be 0 rops submitted');
+          assert.deepStrictEqual(marvellSummary.ropsOutstanding, 0, 'there should be 0 rops outstanding');
+          assert.deepStrictEqual(marvellSummary.ropsOverdue, 0, 'there should be 0 rops overdue');
 
           assert.ok(!data.find(e => e.id === 999), 'inactive establishments should not be returned in the data');
           assert.deepStrictEqual(meta.total, 2, 'inactive establishments should not be counted in total');
