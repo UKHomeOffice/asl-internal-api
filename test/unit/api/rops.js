@@ -119,7 +119,7 @@ describe('/rops', () => {
         .get(`/rops/2020/establishments`)
         .expect(200)
         .expect(response => {
-          const { data, meta } = response.body;
+          const { data } = response.body;
           const croydonSummary = data.find(e => e.id === 100);
           assert.deepStrictEqual(croydonSummary.ropsDue, 3, 'there should be 3 rops due');
           assert.deepStrictEqual(croydonSummary.ropsSubmitted, 1, 'there should be 1 rop submitted');
