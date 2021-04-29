@@ -76,7 +76,7 @@ describe('/rops', () => {
           id: ids.projects.croydon.expiredProject,
           establishmentId: ids.establishments.croydon,
           licenceHolderId: ids.profiles.bruceBanner,
-          title: 'Expired project - draft ROP',
+          title: 'Expired project - draft ROP (overdue)',
           licenceNumber: 'ppl-expired',
           schemaVersion: 1,
           status: 'expired',
@@ -90,7 +90,7 @@ describe('/rops', () => {
           id: ids.projects.croydon.revokedProject,
           establishmentId: ids.establishments.croydon,
           licenceHolderId: ids.profiles.bruceBanner,
-          title: 'Revoked project - no ROP',
+          title: 'Revoked project - no ROP (overdue)',
           licenceNumber: 'ppl-revoked',
           schemaVersion: 1,
           status: 'revoked',
@@ -124,9 +124,13 @@ describe('/rops', () => {
           assert.deepStrictEqual(croydonSummary.ropsDue, 3, 'there should be 3 rops due');
           assert.deepStrictEqual(croydonSummary.ropsSubmitted, 1, 'there should be 1 rop submitted');
           assert.deepStrictEqual(croydonSummary.ropsOutstanding, 2, 'there should be 2 rops outstanding');
+          assert.deepStrictEqual(croydonSummary.ropsOverdue, 2, 'there should be 2 rops overdue');
 
           const marvellSummary = data.find(e => e.id === 101);
           assert.deepStrictEqual(marvellSummary.ropsDue, 0, 'there should be 0 rops due');
+          assert.deepStrictEqual(marvellSummary.ropsSubmitted, 0, 'there should be 0 rops submitted');
+          assert.deepStrictEqual(marvellSummary.ropsOutstanding, 0, 'there should be 0 rops outstanding');
+          assert.deepStrictEqual(marvellSummary.ropsOverdue, 0, 'there should be 0 rops overdue');
 
           assert.ok(!data.find(e => e.id === 999), 'inactive establishments should not be returned in the data');
           assert.deepStrictEqual(meta.total, 2, 'inactive establishments should not be counted in total');
