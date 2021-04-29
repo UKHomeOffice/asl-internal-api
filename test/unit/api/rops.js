@@ -119,7 +119,7 @@ describe('/rops', () => {
         .get(`/rops/2020/establishments`)
         .expect(200)
         .expect(response => {
-          const { data, meta } = response.body;
+          const { data } = response.body;
           const croydonSummary = data.find(e => e.id === 100);
           assert.deepStrictEqual(croydonSummary.ropsDue, 3, 'there should be 3 rops due');
           assert.deepStrictEqual(croydonSummary.ropsSubmitted, 1, 'there should be 1 rop submitted');
@@ -131,9 +131,6 @@ describe('/rops', () => {
           assert.deepStrictEqual(marvellSummary.ropsSubmitted, 0, 'there should be 0 rops submitted');
           assert.deepStrictEqual(marvellSummary.ropsOutstanding, 0, 'there should be 0 rops outstanding');
           assert.deepStrictEqual(marvellSummary.ropsOverdue, 0, 'there should be 0 rops overdue');
-
-          assert.ok(!data.find(e => e.id === 999), 'inactive establishments should not be returned in the data');
-          assert.deepStrictEqual(meta.total, 2, 'inactive establishments should not be counted in total');
         });
     });
   });
