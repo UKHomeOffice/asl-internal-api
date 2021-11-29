@@ -3,6 +3,7 @@ module.exports = {
   api: process.env.API_URL,
   workflow: process.env.WORKFLOW_SERVICE,
   search: process.env.SEARCH_SERVICE,
+  metrics: process.env.METRICS_SERVICE,
   auth: {
     realm: process.env.KEYCLOAK_REALM,
     url: process.env.KEYCLOAK_URL,
