@@ -10,7 +10,8 @@ module.exports = {
     licensing: uuid(),
     inspector: uuid(),
     rops: uuid(),
-    bruceBanner: uuid()
+    bruceBanner: uuid(),
+    basic: uuid()
   },
   projects: {
     croydon: {
