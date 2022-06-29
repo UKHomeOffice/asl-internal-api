@@ -12,11 +12,11 @@ module.exports = {
     permissions: process.env.PERMISSIONS_SERVICE
   },
   db: {
-    database: process.env.DATABASE_NAME,
+    database: process.env.DATABASE_NAME || 'asl',
     host: process.env.DATABASE_HOST,
-    password: process.env.DATABASE_PASSWORD,
+    password: process.env.DATABASE_PASSWORD || 'test-password',
     port: process.env.DATABASE_PORT,
-    username: process.env.DATABASE_USERNAME
+    username: process.env.DATABASE_USERNAME || 'postgres'
   },
   bodySizeLimit: process.env.BODY_SIZE_LIMIT
 };
