@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/UKHomeOffice/asl-internal-api#readme",
   "dependencies": {
-    "@asl/constants": "^1.2.1",
-    "@asl/schema": "^10.7.0",
+    "@asl/constants": "1.2.1",
+    "@asl/schema": "^10.10.0",
     "@asl/service": "^8.8.4",
     "express": "^4.16.2",
     "http-proxy": "^1.18.1",
@@ -41,6 +41,7 @@
     "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
     "eslint-config-lennym": "^2.1.1",
+    "knex": "^0.21.21",
     "mocha": "^7.1.2",
     "nodemon": "^2.0.4",
     "reqres": "^2.1.0",
