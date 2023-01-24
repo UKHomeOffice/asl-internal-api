@@ -9,6 +9,7 @@
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint .",
     "test:unit": "mocha ./test/unit",
+    "test:audit": "audit-ci --high --skip-dev --config .auditrc.json",
     "pretest:unit": "DATABASE_NAME=asl-test NODE_ENV=test knex migrate:latest --knexfile ./node_modules/@asl/schema/knexfile.js"
   },
   "repository": {
@@ -37,6 +38,7 @@
     "uuid-validate": "0.0.3"
   },
   "devDependencies": {
+    "audit-ci": "^6.5.0",
     "body-parser": "^1.20.1",
     "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
