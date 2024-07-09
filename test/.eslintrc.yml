@@ -5,4 +5,6 @@ env:
   mocha: true
 
 rules:
-  implicit-dependencies/no-implicit: [2, { dev: true }]
+  implicit-dependencies/no-implicit:
+    - error
+    - dev: true
