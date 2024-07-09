@@ -1,5 +1,5 @@
 extends:
-  - "../.eslintrc"
+  - "../.eslintrc.yml.yml.yml"
 
 env:
   mocha: true
