@@ -1,2 +1,2 @@
 extends:
-  - "@ukhomeoffice/asl"
+  - "./node_modules/@ukhomeoffice/eslint-config-asl/index.js"
