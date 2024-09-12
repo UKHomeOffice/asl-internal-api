@@ -39,7 +39,7 @@
     "uuid-validate": "0.0.3"
   },
   "devDependencies": {
-    "@ukhomeoffice/asl-eslint-common": "^2.2.0",
+    "@ukhomeoffice/eslint-config-asl": "^3.0.0",
     "audit-ci": "^6.5.0",
     "body-parser": "^1.20.1",
     "dotenv": "^5.0.1",
