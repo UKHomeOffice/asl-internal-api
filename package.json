@@ -10,7 +10,7 @@
     "test:lint": "eslint .",
     "test:unit": "mocha ./test/unit",
     "test:audit": "audit-ci --high --skip-dev --config .auditrc.json",
-    "pretest:unit": "DATABASE_NAME=asl-test NODE_ENV=test knex migrate:latest --knexfile ./node_modules/@asl/schema/knexfile.js"
+    "pretest:unit": "node scripts/latest-migration.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/UKHomeOffice/asl-internal-api#readme",
   "dependencies": {
-    "@asl/schema": "^10.18.5",
+    "@asl/schema": "^11.0.0",
     "@asl/service": "^10.3.1",
     "@ukhomeoffice/asl-constants": "2.1.8",
     "eslint-plugin-react": "^7.34.3",

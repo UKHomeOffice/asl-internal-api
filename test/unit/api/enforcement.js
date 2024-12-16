@@ -1,6 +1,6 @@
 const assert = require('assert');
 const request = require('supertest');
-const uuid = require('uuid').v4;
+const { v4: uuid } = require('uuid');
 const apiHelper = require('../../helpers/api');
 const ids = require('../../data/ids');
 
