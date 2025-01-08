@@ -13,9 +13,9 @@ module.exports = {
   },
   db: {
     database: process.env.DATABASE_NAME || 'asl',
-    host: process.env.DATABASE_HOST,
+    host: process.env.DATABASE_HOST || 'localhost',
     password: process.env.DATABASE_PASSWORD || 'test-password',
-    port: process.env.DATABASE_PORT,
+    port: process.env.DATABASE_PORT || 5432,
     username: process.env.DATABASE_USERNAME || 'postgres'
   },
   bodySizeLimit: process.env.BODY_SIZE_LIMIT
