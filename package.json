@@ -1,6 +1,6 @@
 {
   "name": "asl-internal-api",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/UKHomeOffice/asl-internal-api#readme",
   "dependencies": {
-    "@asl/schema": "^10.19.0",
+    "@asl/schema": "^11.0.0",
     "@asl/service": "^10.3.1",
     "@ukhomeoffice/asl-constants": "2.2.0",
     "eslint-plugin-react": "^7.34.3",
@@ -35,7 +35,7 @@
     "moment": "^2.29.4",
     "ndjson": "^2.0.0",
     "node-fetch": "^2.6.7",
-    "objection": "^2.2.18",
+    "objection": "^3.1.5",
     "uuid-validate": "0.0.3"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "body-parser": "^1.20.1",
     "dotenv": "^5.0.1",
     "eslint": "^8.25.0",
-    "knex": "^0.21.21",
+    "knex": "^3.1.0",
     "mocha": "^10.3.0",
     "nodemon": "^2.0.20",
     "reqres": "^2.1.0",
